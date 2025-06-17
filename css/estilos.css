@@ -1,0 +1,1184 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #FBF8DC;
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block-end: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+  
+
+/* ENCABEZADO */
+  header {
+    background-color: #613A6E;
+    padding: 1em;
+    font-family: "Crimson Pro", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center;
+    color: #FAEFE4;
+    box-shadow: 0 4px 2px hsl(0 0% 0% / 0.25);
+  }
+  
+  .header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+  /* MENÚ PRINCIPAL */
+  nav {
+    background-color: #613A6E;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav ul li {
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li:hover {
+    background-color: #F7410F;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #FBF8DC;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+  
+ /* ----
+   menu
+   ---- */
+
+/* botón "hamburguesa" */
+.menu-btn {
+  background: hsl(0 0% 100% / 0.25);
+  border-radius: 50%;
+  box-shadow: -5px 5px 5px hsl(180 100% 4% / 0.2);
+  padding: .75rem;
+  width: 3rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-out; /* anima el "hover" */
+
+  /* fijo, no "scrolea", no genera scroll */
+  position: fixed;
+  /* emplazamiento 1 renglón del borde superior */
+  top: 1em;
+  /* emplazamiento 1 renglón del borde derecho */
+  right: 1em;
+  /* en capa superior, casi arriba de todo */
+  z-index: 9000;
+}
+
+/* cada barra de la "hamburguesa" */
+.menu-btn .btn-linea {
+  width: 25px;
+  height: 3px;
+  margin: 4px 0 4px 0;
+  background: hsl(0 0% 90%);
+  transition: all 0.3s ease-out;
+  /* capa superior, pero no parece */
+  position: relative;
+  /* capa superior, casi arriba de todo */
+  z-index: 9000;
+}
+
+/* cada barra, transformacion para formar la "X" */
+.menuVisible .menu-btn .btn-linea {
+  transform: rotate(180deg);
+}
+/* Las tres barras para formar la "X" */
+.menuVisible .menu-btn .btn-linea:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 6px);
+}
+.menuVisible .menu-btn .btn-linea:nth-child(2) {
+  opacity: 0;
+}
+.menuVisible .menu-btn .btn-linea:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -6px);
+}
+
+/* menú propiamente dicho */
+nav ul {
+  background-color: #F7410F;
+  display: grid;
+  place-items: center;
+  place-content: center;
+
+  /* sale del fondo, queda fijo */
+  position: fixed;
+  /* emplazamiento,
+  estirado en toda la ventana */
+  inset: 0;
+  /* capa superior, arriba de casi todo */
+  z-index: 8000;
+  /* escondido "a la derecha" */
+  translate: 100%;
+  
+  transition: all .6s ease; /* anima cuando "nav" NO tiene la clase "menuVisible" */
+}
+
+/* el menu cuando "nav" tiene la clase "menuVisible" */
+.menuVisible ul {
+  background-color: #F7410F;
+  transition: all .4s ease; /* anima cuando "nav" tiene la clase "menuVisible" */
+  
+  /* se muestra */
+  translate: 0;
+}
+
+/* cada vínculo del menu */
+nav ul li a {
+  border-bottom: solid 3px hsla(248, 18%, 83%, 0.219);
+  color: #FAEFE4;
+  display: block;
+  font-size: 1.5rem;
+  margin-block-end: .5rem;
+  width: min(70vw, 20rem); /* el valor menor entre el 40% del ancho de la ventana del navegador y 240px */
+  text-align: center;
+  
+  padding: .5rem;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  border-bottom: solid 3px #FFD233;
+  transition: all .3s;
+}
+ 
+  /* IMÁGENES */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  #logo {
+    width: 20%;
+    margin: auto;
+  }
+  #logopiedepagina {
+    width: 20%;
+    margin: auto;
+  }
+  
+  .fotocompleta { 
+  width: 100%;
+  height: auto;
+  display: block;
+  }
+  
+  #acompañarfoto {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#acompañarrr{
+display: flex;
+flex-direction: row;
+}
+
+
+#mainsabiduria{
+  background-image: url("../imagenes/fondodesabiduria.JPG");
+  background-position: center;
+  max-width: 100%;
+  background-size: cover;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.imagenopinion { 
+  background-color: #FF0072;
+  padding: 1em;
+  max-width: 100%;
+ }
+  
+ .fotoizquierda {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 100% 90%;
+  border-top-right-radius: 100% 90%;
+  display: block;
+}
+
+
+
+ /* TEXTOS GENERALES */
+  h2 {
+    background-color: #B8C180;
+    color: #FAEFE4;
+    padding: 3em;
+    text-align: center;
+    margin: 0.5em;
+  }
+
+  h3 {
+    background-color: #FE0072;
+    color: #FAEFE4;
+    padding: 1em;
+    text-align: center;
+    font-family: "Crimson Pro", serif;
+    font-weight: 600;
+    font-size: xx-large;
+  }
+
+  .titulo { 
+    font-family: "Crimson Pro", serif;
+  font-size: x-large;
+  font-weight: 400;
+  padding: 1em;
+  }
+
+  .titulosamarillos { 
+    font-family: "Crimson Pro", serif;
+    background-color: #FFC900;
+    color: #F7410F;
+    margin: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 0,5em;
+    border-radius: 30px;
+  }
+
+  a { text-decoration: none; }
+
+
+  .textosobreimagen{
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .grid-inicio div h4 { 
+    color: #FAEFE4;
+    font-size: x-large;
+  }
+
+
+  #imagenindex1 {
+  background-image: url("../imagenes/imagenindex1.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  text-align: center;
+  color: #FAEFE4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+  #imagenindex2 {
+  background-image: url("../imagenes/imagenindex2.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  text-align: center;
+  color: #FAEFE4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+  #imagenindex3 {
+  background-image: url("../imagenes/imagenindex3.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  align-items: center;
+  text-align: center;
+  color: #FAEFE4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#imagenindex1 a,
+#imagenindex2 a,
+#imagenindex3 a {
+  color: #FBF8DC;
+  text-decoration: none;
+}
+
+#imagenindex1 a:visited,
+#imagenindex2 a:visited,
+#imagenindex3 a:visited {
+  color: #FBF8DC;
+}
+
+  
+  /* TEXTOS MI PROPOSITO */
+
+  #mipropositotitulo {
+    background-color: #B8C180;
+    color: #FAEFE4;
+    padding: 0.5em;
+    text-align: center;
+    margin: 0;
+  }
+
+  #acompañardesdeelamortitulo {
+    background-color: #5A7500;
+    color: #FAEFE4;
+    padding: 0.5em;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .miproposito {
+    background-color: #B8C180;
+    color: #FAEFE4;
+    padding: 1em;
+    text-align: left;
+    margin: 0;
+  }
+  .acompañar {
+    background-color: #5A7500;
+    color: #FAEFE4;
+    padding: 1em;
+    text-align: left;
+    margin: 0;
+  }
+
+#finalmiproposito {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 0;  /* 👈 antes estaba en 3rem */
+  overflow: hidden;
+}
+
+.seccion-invitacion {
+  position: relative;
+  margin-top: -4rem;
+  padding-top: 2rem;  /* ↓ Menos padding para acercarlo al bloque de abajo */
+  z-index: 2;
+}
+
+.contenedor-boton-invitacion {
+  position: relative;
+  height: 0; /* clave para que no empuje el layout hacia abajo */
+  z-index: 10;
+}
+
+#aserparte,
+#aencontrartucamino {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 50%;
+  padding: 3rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #FAEFE4;
+  text-align: center;
+  text-decoration: none;
+}
+
+#teinvito {
+position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFD233;
+  color: #F7410F;
+  padding: 0.8rem 2rem;
+  border-radius: 1.5rem;
+  font-family: "Crimson Pro", serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+#aserparte {
+  background-color: #F7410F;
+}
+
+#aencontrartucamino {
+  background-color: #F88359;
+}
+
+   
+  
+  /* TEXTOS CAMINOS DE SANACION */
+    #h2izquierda1 { 
+      background-color: #5A7500;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      font-family: "Crimson Pro", serif;
+      margin: 0;
+    }
+    #pizquierda1 { 
+      background-color: #5A7500;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      margin: 0;
+    }
+
+    #h2izquierda2 { 
+      background-color: #B8C180;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      font-family: "Crimson Pro", serif;
+      margin: 0; 
+    }
+    #pizquierda2 { 
+      background-color: #B8C180;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      margin: 0;
+    }
+  
+    #h2derecha {
+      background-color: #F7410F;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      font-family: "Crimson Pro", serif;
+      margin: 0;
+    }
+    #pderecha { 
+      background-color: #F7410F;
+      color: #FAEFE4;
+      padding: 1em;
+      text-align: center;
+      margin: 0;
+    }
+
+    #comenzatransformacion {
+      text-decoration: none;
+      font-family: "Crimson Pro", serif;
+      background-color: #FFC900;
+      color: #F7410F;
+      padding: 1em;
+      text-align: center;
+      margin: 1em;
+      } 
+
+
+      .grid-sanacion {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin: 1rem;
+}
+    
+    
+      /* TEXTOS CIRCULOS DE SABIDURIA */
+      .circulos { 
+      color: #FAEFE4;
+      font-family: "Crimson Pro", serif;
+      font-size: xx-large;
+      padding: 0%;
+    }
+
+    .pcirculos { 
+      flex: 1;
+      background-color: #F7410F;
+      color: #FAEFE4;
+      font-family: "Work Sans", sans-serif;
+      font-size: large;
+      text-align: left;
+      padding: 1em;
+    }
+
+    #talleresizq {
+      margin-right: 2em;
+      margin-bottom: 2em;
+      padding-top: 1em;
+ 
+    }
+
+    #talleresizq .opacitydiv {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+    #encuentrosder {
+      margin-left: 2em;
+      margin-bottom: 1em;
+      padding-top: 1em;
+    }
+
+   .opacitydiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  background-color: rgba(247, 65, 15, 0.85); /* Rojo con transparencia */
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.opacitydiv h2,
+.opacitydiv p {
+  color: #FAEFE4; /* Blanco opaco */
+  background: none;
+}
+
+
+    #finalsabiduria {
+      text-decoration: none;
+      background-color: #B8C180;
+      color: #FAEFE4;
+      padding: 0.5em;
+      margin-left: 1.5em;
+      margin-right: 1.5em;
+      margin-bottom: 0;
+      margin-top: 1em;
+      text-align: center;
+    }
+
+    #finalsabiduriavioleta {
+      background-color: #B8C180;
+      color: #613A6E;
+      font-family: "Crimson Pro", serif;
+      padding: 1em;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    
+    #finalsabiduria h4 { 
+      padding-top: 3em;
+      margin: 0;
+      margin-left: 2em;
+      margin-right: 2em;
+     }
+
+    #finalsabiduria h3 { padding-top: 0em; }
+    
+    
+    /* TEXTOS TESTIMONIOS */
+    .titulovivenciasleft {
+    background-color: #B8C180;
+    color: #FBF8DC;
+    font-family: "Crimson Pro", serif;
+    text-align: center;
+    padding: 1.5em;
+    }
+
+    .titulovivenciasright {
+      background-color: #B8C180;
+      color: #FBF8DC;
+      font-family: "Crimson Pro", serif;
+      text-align: center;
+      padding: 1.5em;
+      }
+
+    .experiencialeft  {
+        background-color: #B8C180;
+        color: #FBF8DC;
+        font-family: "Work Sans", sans-serif;
+        text-align: left;
+        padding: 1.5em;
+        font-weight: 600;
+        }
+        
+    .experienciaright {
+      background-color: #B8C180;
+      color: #FBF8DC;
+      font-family: "Work Sans", sans-serif;
+      text-align: left;
+      padding: 1.5em;
+      font-weight: 600;
+      }
+
+      #contanosexperiencia {
+        background-color: #5A7500;
+        color: #FBF8DC;
+        font-family: "Crimson Pro", serif;
+        text-align: center;
+        padding: 1.5em;
+        font-size: x-large;
+        }
+
+    #mensajefinal {
+    background-color: #FE0072;
+    color: #FAEFE4;
+    font-family: "Work Sans", sans-serif;
+    text-align: center;
+    padding: 1.5em;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+  }
+
+  
+  
+  /* BOTONES / ENLACES */
+  a.boton,
+  section article p a {
+    color: #FAEFE4;
+    padding: 2em;
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+
+  
+  /* ARTÍCULOS */
+  article {
+    margin-bottom: 2em;
+  }
+
+
+  
+  /* TESTIMONIOS */
+  .testimonio {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  background-color: #B8C180;
+  border-radius: 8px;
+  }
+  
+  .grid-testimonios h3 { margin: 0;}
+
+  .testimonio h3,
+.testimonio p {
+  margin: 0;
+  padding-bottom: 1em;
+}
+
+    .grid-testimonios {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  gap: 2rem;
+  }
+  
+  
+  /* FORMULARIO */
+  form {
+    background-color: #FEDBC4;
+    padding: 2em;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    font-family: "Work Sans", sans-serif;
+    border: 1px solid #F7410F;
+    background-color: #FAEFE4;
+    border-radius: 5px;
+  }
+  
+  form textarea {
+    height: 150px;
+  }
+  
+  form button,
+  input[type="submit"] {
+    background-color: #F7410F;
+    color: #FAEFE4;
+    padding: 0.8em 2em;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+
+  /* ÍCONOS DE CONTACTO */
+  .iconos-contacto {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin: 2em auto;
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .iconos-contacto div {
+    background-color: #B8C180;
+    padding: 0.5em;
+    text-align: center;
+    border-radius: 15px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .iconos-contacto img,
+  .iconos-contacto svg {
+    width: 45px;
+    height: auto;
+  }
+
+  .grid-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+  
+  /* FRASES DESTACADAS */
+  blockquote,
+  .cita {
+    background-color: #FF0072;
+    color: white;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 2em;
+    margin: 2em auto;
+    max-width: 800px;
+    font-weight: bold;
+    border-radius: 12px;
+  }
+
+
+
+    /* PIE DE PÁGINA */
+  footer {
+    background-color: #613A6E;
+    padding: 1em;
+    text-align: center;
+    color: #FAEFE4;
+    font-family: "Crimson Pro", serif;
+  }
+
+  
+
+  /* UTILIDADES */
+  .texto-centro {
+    text-align: center;
+  }
+
+
+.grid-inicio {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 0rem;
+  gap: 0;
+}
+
+
+  /* ===================== TABLET ===================== */
+@media (min-width: 768px) {
+
+  /* el menú deja de ser fijo */
+  header nav {
+    /* para que esté en capa superior pero que no parezca */
+    position: relative;
+  }
+
+  #logo{
+    width: 6em;
+  }
+    
+  /* botón "hamburguesa" oculto */
+  .menu-btn {
+    display: none;
+  }
+
+  /* menu visible */
+  header nav ul,
+  header .menuVisible ul {
+    /* caja flexible para menu horizontal*/
+    display: flex;
+    /* separación entre sus elementos */
+    gap: .25em;
+
+    /* para que esté en capa superior pero que no parezca */
+    position: relative;
+
+    /* elimina desplazamiento */
+    translate: 0;
+
+    /* elimina fondo */
+    background-color: unset;
+  }
+    
+  /* items de lista  que contienen los vínculos del menu */
+  header nav ul li {
+    min-width: 4em; /* que no midan menos de: */
+  }
+
+  /* vínculos del menu principal */
+  header nav ul li a {
+    border-radius: .25em ;
+    color: #FAEFE4;
+    font-size: 1rem;
+    width: auto;
+    padding: .25em 1em;
+    text-align: center;
+    display: block; /* para que sean "cajas" */
+    margin-block-end: unset;
+    border-block-end: unset;
+  }
+  
+  /* cuando el cursor se posiciona sobre los vínculos */
+  header nav ul li a:hover {
+    background-color: #F7410F;
+    color: #FAEFE4;
+    border-block-end: unset;
+  }
+  
+
+.grid-inicio {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin: 1em;
+  }
+  
+  #caminos {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+.grid-sanacion {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: stretch;
+}
+
+
+.grid-dos img {
+  width: 100%;
+  height: 468px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+  /* Solo para ese bloque en particular, podés ajustar la altura mínima */
+  #h2izquierda2, #pizquierda2 {
+    flex-grow: 1;
+  }
+
+
+  #h2izquierda1,
+  #pizquierda1,
+  #h2izquierda2,
+  #pizquierda2,
+  #h2derecha,
+  #pderecha {
+    text-align: left;
+    padding: 1.5rem;
+  }
+
+  #h2izquierda1, #h2izquierda2, #h2derecha {
+    font-size: 1.8rem;
+  }
+
+  #imagenindex3 {
+    grid-column: span 2;
+  }
+
+  #imagenindex1,
+  #imagenindex2,
+  #imagenindex3 {
+    height: 50vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  #imagenindex1 a,
+  #imagenindex2 a,
+  #imagenindex3 a {
+    color: #FBF8DC;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px black;
+    text-decoration: none;
+  }
+
+  .formulario-contacto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .formulario-contacto textarea,
+  .formulario-contacto button {
+    grid-column: span 2;
+  }
+
+.grid-contacto {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .columna-formulario, .columna-iconos {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .iconos-contacto {
+    width: 100%;
+  }
+
+  .miproposito {
+    gap: 2rem;
+    align-items: stretch;
+    padding: 2rem;
+  }
+
+  .fotocompleta {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  }
+
+  #mipropositotitulo,
+  .miproposito p {
+    grid-column: 2;
+  }
+
+    #mipropositotitulo {
+    text-align: center;
+  }
+
+  .miproposito p {
+    font-size: 1.1rem;
+    grid-column: 2;
+    text-align: left;
+  }
+
+  .grid-proposito {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  padding: 0;
+  margin: 0; 
+  margin-top: 0;
+  gap: 0;
+  }
+
+  .grid-acompañar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  padding: 0;
+  margin: 0; 
+  margin-top: 0;
+  gap: 0;
+  }
+
+  #acompañarrr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+    padding: 2rem;
+  }
+
+  #acompañarfoto {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  }
+
+  .acompañar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    font-size: 1.1rem;
+    padding: 1.5rem;
+  }
+  
+.grid-tres {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    margin-left: 3em;
+    margin-right: 3em;
+    align-items: stretch;
+  }
+  
+  .grid-tres > div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+
+  #talleresizq {
+    margin-left: 0;
+  }
+
+  #encuentrosder {
+    margin-right: 0;
+  }
+
+  .testimonio {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: stretch;
+  align-items: center;
+}
+
+.testimonio img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+}
+
+.testimonio h3,
+.testimonio p {
+  width: 60%;
+  background-color: #B8C180;
+  color: #FBF8DC;
+  padding: 1rem;
+  margin: 0;
+  display: block;
+}
+
+}
+
+/* === VISTA DESKTOP === */
+@media (min-width: 1024px) {
+   .grid-inicio {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    margin: 1em;
+  }
+
+    .grid-dos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  align-items: stretch;
+}
+  
+  main {
+    padding: 0;
+  }
+  
+
+  #comenzatransformacion {
+    font-size: 2rem;
+    padding: 2rem;
+  }
+
+   .grid-sanacion {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-testimonios {
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  }
+
+  .testimonio {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .testimonio img {
+    width: 100%;
+    height: auto;
+  }
+
+  .testimonio h3,
+  .testimonio p {
+    width: 100%;
+    text-align: center;
+  }
+
+  #imagenindex3 {
+    grid-column: auto;
+  }
+
+  .formulario-contacto {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .formulario-contacto textarea,
+  .formulario-contacto button {
+    grid-column: span 3;
+  }
+}
